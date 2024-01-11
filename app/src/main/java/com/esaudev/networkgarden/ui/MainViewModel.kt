@@ -13,16 +13,17 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val getAllPokemonUseCase: GetAllPokemonUseCase
-): ViewModel() {
+) : ViewModel() {
 
-    private val _pokemonList : MutableLiveData<List<Pokemon>> = MutableLiveData()
-    val pokemonList : LiveData<List<Pokemon>>
+    private val _pokemonList: MutableLiveData<List<Pokemon>> = MutableLiveData()
+    val pokemonList: LiveData<List<Pokemon>>
         get() = _pokemonList
 
-    fun getAllPokemon() {
+    fun getSinglePokemon() {
         viewModelScope.launch {
-            _pokemonList.value = getAllPokemonUseCase()
+            val allPokemon = getAllPokemonUseCase()
+            val singlePokemon = allPokemon.firstOrNull()
+            _pokemonList.value = listOfNotNull(singlePokemon)
         }
     }
-
 }

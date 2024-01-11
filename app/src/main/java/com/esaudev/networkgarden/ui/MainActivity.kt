@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         initRecyclerView()
         subscribeObservers()
-        viewModel.getAllPokemon()
+        viewModel.getSinglePokemon()
     }
 
     private fun initRecyclerView() {

@@ -11,8 +11,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ivPokemonImage"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
         android:layout_marginStart="16dp"
         android:scaleType="centerCrop"
         tools:src="@drawable/ic_launcher_background"
